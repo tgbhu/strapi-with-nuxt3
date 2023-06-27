@@ -1,0 +1,24 @@
+name: Azure - Create Terraform Backend
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-storage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+      - name: Azure CLI script file
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.49.0
+          inlineScript: |
+            chmod +x $GITHUB_WORKSPACE/infrastructure/backend/azure/create-tf-backend.sh
+            $GITHUB_WORKSPACE/infrastructure/backend/azure/create-tf-backend.sh
