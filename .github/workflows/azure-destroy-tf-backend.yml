@@ -1,4 +1,4 @@
-name: Azure - Delete Terraform Backend
+name: Azure - Destroy Terraform Backend
 
 on:
   workflow_dispatch:
