@@ -10,7 +10,7 @@ env:
   TF_VAR_STORAGE_ACCOUNT_NAME: ${{ vars.TF_VAR_STORAGE_ACCOUNT_NAME }}
 
 jobs:
-  create-storage:
+  Create_Terraform_Backend_Storage:
     runs-on: ubuntu-latest
 
     steps:
