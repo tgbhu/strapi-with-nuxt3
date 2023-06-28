@@ -3,6 +3,12 @@ name: Azure - Create Terraform Backend
 on:
   workflow_dispatch:
 
+env:
+  TF_VAR_CONTAINER_NAME: ${{ vars.TF_VAR_CONTAINER_NAME }}
+  TF_VAR_LOCATION: ${{ vars.TF_VAR_LOCATION }}
+  TF_VAR_RESOURCE_GROUP_NAME: ${{ vars.TF_VAR_RESOURCE_GROUP_NAME }}
+  TF_VAR_STORAGE_ACCOUNT_NAME: ${{ vars.TF_VAR_STORAGE_ACCOUNT_NAME }}
+
 jobs:
   create-storage:
     runs-on: ubuntu-latest
