@@ -9,7 +9,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
+      - name: Run script
+        run: echo $TF_VAR_STORAGE_ACCOUNT_NAME
       - name: Azure Login
         uses: azure/login@v1
         with:
