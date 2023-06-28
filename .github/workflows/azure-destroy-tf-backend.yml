@@ -1,16 +1,14 @@
-name: Azure - Create Terraform Backend
+name: Azure - Delete Terraform Backend
 
 on:
   workflow_dispatch:
 
 env:
-  TF_VAR_CONTAINER_NAME: ${{ vars.TF_VAR_CONTAINER_NAME }}
-  TF_VAR_LOCATION: ${{ vars.TF_VAR_LOCATION }}
   TF_VAR_RESOURCE_GROUP_NAME: ${{ vars.TF_VAR_RESOURCE_GROUP_NAME }}
   TF_VAR_STORAGE_ACCOUNT_NAME: ${{ vars.TF_VAR_STORAGE_ACCOUNT_NAME }}
 
 jobs:
-  Create_Terraform_Backend_Storage:
+  Destroy_Terraform_Backend_Storage:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,5 +24,5 @@ jobs:
         with:
           azcliversion: 2.49.0
           inlineScript: |
-            chmod +x $GITHUB_WORKSPACE/infrastructure/backend/azure/create-tf-backend.sh
-            $GITHUB_WORKSPACE/infrastructure/backend/azure/create-tf-backend.sh
+            chmod +x $GITHUB_WORKSPACE/infrastructure/backend/azure/delete-tf-backend.sh
+            $GITHUB_WORKSPACE/infrastructure/backend/azure/delete-tf-backend.sh
