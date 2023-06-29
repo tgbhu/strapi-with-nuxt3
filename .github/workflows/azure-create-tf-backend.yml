@@ -26,5 +26,5 @@ jobs:
         with:
           azcliversion: 2.49.0
           inlineScript: |
-            chmod +x $GITHUB_WORKSPACE/infrastructure/backend/azure/create-tf-backend.sh
-            $GITHUB_WORKSPACE/infrastructure/backend/azure/create-tf-backend.sh
+            chmod +x $GITHUB_WORKSPACE/infrastructure/azure/backend/create-tf-backend.sh
+            $GITHUB_WORKSPACE/infrastructure/azure/backend/create-tf-backend.sh
